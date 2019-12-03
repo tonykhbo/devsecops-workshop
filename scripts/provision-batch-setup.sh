@@ -12,7 +12,8 @@ source "$DIR/provision-batch-init.sh"
 check-hostname
 
 for (( i = $begin; i <= $count; i++ )); do
- oc login "$hostname" --insecure-skip-tls-verify -u "$username${i}" -p "$password"
+ #oc login "$hostname" --insecure-skip-tls-verify -u "$username${i}" -p "$password"
+ oc login "$hostname" --token="$token"
  ./provision.sh deploy --deploy-che --ephemeral
  sleep "$pause"
 
