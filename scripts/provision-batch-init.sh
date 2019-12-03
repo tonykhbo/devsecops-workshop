@@ -3,6 +3,7 @@
 hostname=
 password=
 username=
+token=
 begin=1
 count=3
 pause=5
